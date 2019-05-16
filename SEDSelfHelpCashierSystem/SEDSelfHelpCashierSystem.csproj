@@ -38,6 +38,10 @@
     <ApplicationIcon>Images\sedbz.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -45,6 +49,10 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -64,6 +72,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Component\JsonHelper.cs" />
+    <Compile Include="Component\LogHelper.cs" />
+    <Compile Include="Component\ViewHelper.cs" />
     <Compile Include="Component\VoiceHelper.cs" />
     <Compile Include="Entity\Fuji\AuthorizationCertify.cs" />
     <Compile Include="Entity\Fuji\AuthorizationInfoRtn.cs" />
@@ -99,8 +109,16 @@
     <Compile Include="Entity\Fuji\ValueCardInfoRtn.cs" />
     <Compile Include="Entity\Fuji\VipCertify.cs" />
     <Compile Include="Entity\Fuji\VipInfoRtn.cs" />
+    <Compile Include="Interfaces\ChangDeLianHuaInterface.cs" />
+    <Compile Include="Interfaces\FujiInterface.cs" />
     <Compile Include="Utils\Converter.cs" />
     <Compile Include="Utils\Object2JsonUtil.cs" />
+    <Compile Include="Utils\WebServiceUtil.cs" />
+    <Compile Include="Web References\WebReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -143,6 +161,11 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Web References\WebReference\LogicExpose.wsdl" />
+    <None Include="Web References\WebReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -150,7 +173,6 @@
   <ItemGroup>
     <Folder Include="Config\" />
     <Folder Include="Entity\Sed\" />
-    <Folder Include="Interfaces\" />
     <Folder Include="Video\" />
     <Folder Include="Views\" />
     <Folder Include="Voice\" />
@@ -214,6 +236,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Lib\SensorDll.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://127.0.0.1:8080/wb_demo/services/LogicExpose%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebReference\</RelPath>
+      <UpdateFromURL>http://127.0.0.1:8080/wb_demo/services/LogicExpose%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SEDSelfHelpCashierSystem_WebReference_LogicExposeService</CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

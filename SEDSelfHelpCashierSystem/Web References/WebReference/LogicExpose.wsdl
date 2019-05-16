@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:intf="http://services" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://services" targetNamespace="http://services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://services">
+      <xsd:element name="main">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="args" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="mainResponse">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="callMethod">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in_str" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="callMethodResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="callMethodReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="echo">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in_str" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="echoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="echoReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="mainResponse">
+    <wsdl:part name="parameters" element="impl:mainResponse" />
+  </wsdl:message>
+  <wsdl:message name="mainRequest">
+    <wsdl:part name="parameters" element="impl:main" />
+  </wsdl:message>
+  <wsdl:message name="echoResponse">
+    <wsdl:part name="parameters" element="impl:echoResponse" />
+  </wsdl:message>
+  <wsdl:message name="echoRequest">
+    <wsdl:part name="parameters" element="impl:echo" />
+  </wsdl:message>
+  <wsdl:message name="callMethodRequest">
+    <wsdl:part name="parameters" element="impl:callMethod" />
+  </wsdl:message>
+  <wsdl:message name="callMethodResponse">
+    <wsdl:part name="parameters" element="impl:callMethodResponse" />
+  </wsdl:message>
+  <wsdl:portType name="LogicExpose">
+    <wsdl:operation name="main">
+      <wsdl:input name="mainRequest" message="impl:mainRequest" />
+      <wsdl:output name="mainResponse" message="impl:mainResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="callMethod">
+      <wsdl:input name="callMethodRequest" message="impl:callMethodRequest" />
+      <wsdl:output name="callMethodResponse" message="impl:callMethodResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="echo">
+      <wsdl:input name="echoRequest" message="impl:echoRequest" />
+      <wsdl:output name="echoResponse" message="impl:echoResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LogicExposeSoapBinding" type="impl:LogicExpose">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="main">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="mainRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="mainResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="callMethod">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="callMethodRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="callMethodResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="echo">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="echoRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="echoResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LogicExposeService">
+    <wsdl:port name="LogicExpose" binding="impl:LogicExposeSoapBinding">
+      <wsdlsoap:address location="http://127.0.0.1:8080/wb_demo/services/LogicExpose" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
