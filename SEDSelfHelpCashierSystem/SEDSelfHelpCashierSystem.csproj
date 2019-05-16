@@ -53,6 +53,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -71,7 +72,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Component\AdministratorLoginBox.xaml.cs">
+      <DependentUpon>AdministratorLoginBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Component\BarcodeInputBox.xaml.cs">
+      <DependentUpon>BarcodeInputBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Component\NumberKeyBoardBox.xaml.cs">
+      <DependentUpon>NumberKeyBoardBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Component\VipLoginBox.xaml.cs">
+      <DependentUpon>VipLoginBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Component\WarningBox.xaml.cs">
+      <DependentUpon>WarningBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utils\JsonHelper.cs" />
+    <Compile Include="Utils\KeyBoardHook.cs" />
     <Compile Include="Utils\LogHelper.cs" />
     <Compile Include="Utils\ViewHelper.cs" />
     <Compile Include="Utils\VoiceHelper.cs" />
@@ -122,6 +139,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Page Include="Component\AdministratorLoginBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Component\BarcodeInputBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Component\NumberKeyBoardBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Component\VipLoginBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Component\WarningBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -162,6 +199,8 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Compile Include="Entity\Fuji\FinishInfoRtn.cs" />
+    <None Include="Config\Configuration.ini" />
+    <None Include="Config\log4net.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -178,8 +217,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Component\" />
-    <Folder Include="Config\" />
     <Folder Include="Entity\Sed\" />
   </ItemGroup>
   <ItemGroup>
