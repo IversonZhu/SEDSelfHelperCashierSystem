@@ -65,13 +65,38 @@
     </ApplicationDefinition>
     <Compile Include="Component\JsonHelper.cs" />
     <Compile Include="Component\VoiceHelper.cs" />
+    <Compile Include="Entity\Fuji\AuthorizationCertify.cs" />
+    <Compile Include="Entity\Fuji\AuthorizationInfoRtn.cs" />
     <Compile Include="Entity\Fuji\CancelBarcodeCertify.cs" />
     <Compile Include="Entity\Fuji\CancelBarcodeInfoRtn.cs" />
+    <Compile Include="Entity\Fuji\CancelPayCertify.cs" />
+    <Compile Include="Entity\Fuji\CancelPayInfoRtn.cs" />
+    <Compile Include="Entity\Fuji\CancelTradeCertify.cs" />
+    <Compile Include="Entity\Fuji\CancelTradeinfoRtn.cs" />
+    <Compile Include="Entity\Fuji\CouponGain.cs" />
     <Compile Include="Entity\Fuji\FindGoodsCertify.cs" />
+    <Compile Include="Entity\Fuji\FinishCertify.cs" />
     <Compile Include="Entity\Fuji\GoodInfo.cs" />
+    <Compile Include="Entity\Fuji\Goods.cs" />
     <Compile Include="Entity\Fuji\GoodsInfoRtn.cs" />
+    <Compile Include="Entity\Fuji\Head.cs" />
+    <Compile Include="Entity\Fuji\HeartBackCertify.cs" />
+    <Compile Include="Entity\Fuji\HeartBackInfoRtn.cs" />
+    <Compile Include="Entity\Fuji\PayCertify.cs" />
+    <Compile Include="Entity\Fuji\PayInfoRtn.cs" />
+    <Compile Include="Entity\Fuji\PayMent.cs" />
     <Compile Include="Entity\Fuji\PosCertify.cs" />
     <Compile Include="Entity\Fuji\PosInfoRtn.cs" />
+    <Compile Include="Entity\Fuji\QueryPayRequestCertify.cs" />
+    <Compile Include="Entity\Fuji\QueryPayRequestInfoRtn.cs" />
+    <Compile Include="Entity\Fuji\ResetCertify.cs" />
+    <Compile Include="Entity\Fuji\ResetInfoRtn.cs" />
+    <Compile Include="Entity\Fuji\SendFP.cs" />
+    <Compile Include="Entity\Fuji\SendfpInfoRtn.cs" />
+    <Compile Include="Entity\Fuji\TradeCertify.cs" />
+    <Compile Include="Entity\Fuji\TradeInfoRtn.cs" />
+    <Compile Include="Entity\Fuji\ValueCardCertify.cs" />
+    <Compile Include="Entity\Fuji\ValueCardInfoRtn.cs" />
     <Compile Include="Entity\Fuji\VipCertify.cs" />
     <Compile Include="Entity\Fuji\VipInfoRtn.cs" />
     <Compile Include="Utils\Converter.cs" />
@@ -111,6 +136,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Compile Include="Entity\Fuji\FinishInfoRtn.cs" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
