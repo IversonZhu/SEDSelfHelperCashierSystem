@@ -18,7 +18,7 @@ namespace SEDSelfHelpCashierSystem.Component
     /// <summary>
     /// WarningBox.xaml 的交互逻辑
     /// </summary>
-    public partial class WarningBox : Page
+    public partial class WarningBox : Window
     {
         public WarningBox()
         {

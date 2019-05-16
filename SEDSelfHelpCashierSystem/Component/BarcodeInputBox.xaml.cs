@@ -18,7 +18,7 @@ namespace SEDSelfHelpCashierSystem.Component
     /// <summary>
     /// BarcodeInputBox.xaml 的交互逻辑
     /// </summary>
-    public partial class BarcodeInputBox : Page
+    public partial class BarcodeInputBox : Window
     {
         public BarcodeInputBox()
         {

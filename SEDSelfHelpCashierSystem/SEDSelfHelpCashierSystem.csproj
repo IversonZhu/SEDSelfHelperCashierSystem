@@ -81,15 +81,21 @@
     <Compile Include="Component\NumberKeyBoardBox.xaml.cs">
       <DependentUpon>NumberKeyBoardBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Component\SedButton.xaml.cs">
+      <DependentUpon>SedButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Component\VipLoginBox.xaml.cs">
       <DependentUpon>VipLoginBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Component\WarningBox.xaml.cs">
       <DependentUpon>WarningBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Enum\PayStatu.cs" />
+    <Compile Include="Enum\VoiceType.cs" />
     <Compile Include="Utils\JsonHelper.cs" />
     <Compile Include="Utils\KeyBoardHook.cs" />
     <Compile Include="Utils\LogHelper.cs" />
+    <Compile Include="Utils\SQLiteHelper.cs" />
     <Compile Include="Utils\ViewHelper.cs" />
     <Compile Include="Utils\VoiceHelper.cs" />
     <Compile Include="Entity\Fuji\AuthorizationCertify.cs" />
@@ -149,6 +155,9 @@
     </Page>
     <Page Include="Component\NumberKeyBoardBox.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Component\SedButton.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Component\VipLoginBox.xaml">
@@ -374,7 +383,7 @@
     <Resource Include="Voice\weightNoscan.wav" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Voice\Welcom.wav" />
+    <Resource Include="Voice\Welcome.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

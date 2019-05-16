@@ -22,5 +22,9 @@ namespace SEDSelfHelpCashierSystem.Interfaces
                 return changDeLianHuaInterface;
             }
         }
+
+        //获取唯一的32位订单号 
+        //生成规则 10位门店号 + 10位pos机号 + 6位日期 + 6位小票号
+       
     }
 }

@@ -18,7 +18,7 @@ namespace SEDSelfHelpCashierSystem.Component
     /// <summary>
     /// NumberKeyBoardBox.xaml 的交互逻辑
     /// </summary>
-    public partial class NumberKeyBoardBox : Page
+    public partial class NumberKeyBoardBox : Window
     {
         public NumberKeyBoardBox()
         {

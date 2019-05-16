@@ -10,6 +10,5 @@ namespace SEDSelfHelpCashierSystem.Utils
     public class LogHelper
     {
         public static ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        public static ILog test = LogManager.GetLogger("ErrorLogFileAppender");
     }
 }

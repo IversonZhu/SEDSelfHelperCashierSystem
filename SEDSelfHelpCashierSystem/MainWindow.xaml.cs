@@ -24,5 +24,21 @@ namespace SEDSelfHelpCashierSystem
         {
             InitializeComponent();
         }
+
+        private void SystemConfig_BtnClick(object sender, RoutedEventArgs e)
+        {
+            e.Handled = true;
+            Window win = new Component.AdministratorLoginBox();
+            win.ShowDialog();
+            if (win.DialogResult == true)
+            {
+               
+            }
+        }
+
+        private void no_check_click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

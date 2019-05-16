@@ -18,7 +18,7 @@ namespace SEDSelfHelpCashierSystem.Component
     /// <summary>
     /// VipLogin.xaml 的交互逻辑
     /// </summary>
-    public partial class VipLogin : Page
+    public partial class VipLogin : Window
     {
         public VipLogin()
         {

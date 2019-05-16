@@ -21,12 +21,74 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Image Source="{StaticResource Banner}"/>
+        <StackPanel Orientation="Horizontal" Margin="240,10,30,15" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <TextBlock Text="电子称总重量：" Style="{StaticResource TextBlockDefaultStyle}"
+                       Foreground="{StaticResource ThemeColor}" FontSize="27" FontWeight="Light" 
+                       HorizontalAlignment="Left"/>
+            <TextBlock Text="10" Style="{StaticResource TextBlockDefaultStyle}"
+                       Foreground="{StaticResource ThemeColor}" FontSize="27" FontWeight="Light" 
+                       HorizontalAlignment="Left"/>
+            <TextBlock Text="KG" Style="{StaticResource TextBlockDefaultStyle}"
+                       Foreground="{StaticResource ThemeColor}" FontSize="27" FontWeight="Light"
+                       HorizontalAlignment="Left"/>
+        </StackPanel>
+        <TextBlock Text="小明" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                   FontSize="15" Foreground="Gray" Padding="10,10,10,10" Style="{StaticResource TextBlockDefaultStyle}"/>
+        <ContentControl Content="小红" Grid.Row="1"/>
+        <TextBlock Style="{StaticResource TextBlockDefaultStyle}"
+                   Text="aaaa" Foreground="{StaticResource ThemeColor}"
+                   Grid.Row="2" FontSize="30"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button Style="{StaticResource DefaultButtonStyle}" Background="Transparent"
+                    Click="no_check_click" Width="150">
+                <Button.Content>
+                    <TextBlock Style="{StaticResource TextBlockDefaultStyle}"
+                   Text="" Foreground="{StaticResource ThemeColor}"
+                   FontSize="30"/>
+                </Button.Content>
+            </Button>
 
-        <!-- 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="164*"/>
-            <ColumnDefinition Width="353*"/>
-            </Grid.ColumnDefinitions>
-            -->
+            <!--<TextBlock Style="{StaticResource TextBlockDefaultStyle}"
+                   Text="{Binding list_id}" Foreground="{StaticResource ThemeColor}"
+                   FontSize="30"/>
+            <Button Style="{StaticResource DefaultButtonStyle}" Background="Transparent" Click="no_check_click">
+                <Button.Content>
+                    <TextBlock Style="{StaticResource TextBlockDefaultStyle}"
+                   Text="  机号:" Foreground="{StaticResource ThemeColor}"
+                   FontSize="30"/>
+                </Button.Content>
+            </Button>
+            <TextBlock Style="{StaticResource TextBlockDefaultStyle}"
+                   Text="{Binding PosID}" Foreground="{StaticResource ThemeColor}"
+                   FontSize="30"/>-->
+        </StackPanel>
+        <Border Grid.Row="2" BorderBrush="{StaticResource ThemeColor}"
+                BorderThickness="0,5,0,0" Height="80">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" Text="13822528774" Style="{StaticResource TextBlockDefaultStyle}"
+                           Foreground="{StaticResource ThemeColor}" FontSize="35"/>
+                <StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Right">
+                    <!--<Button HorizontalAlignment="Right" Grid.Column="2"
+                        Style="{StaticResource LittleButtonStyle}"
+                        Background="Black" BorderThickness="0"
+                        BorderBrush="Transparent" Foreground="{StaticResource ThemeColor}"
+                        Click="GoBack_BtnClick"
+                        Content="返回" Name="hidden_button" Margin="0,0,20,0"/>-->
+
+
+                    <Button HorizontalAlignment="Right" Grid.Column="2"
+                        Style="{StaticResource LittleButtonStyle}"
+                        Background="Black" BorderThickness="0"
+                        BorderBrush="Transparent" Foreground="{StaticResource ThemeColor}"
+                        Click="SystemConfig_BtnClick"
+                        Content="帮助" Margin="0,0,20,0"/>
+                </StackPanel>
+            </Grid>
+        </Border>
     </Grid>
 </Window>

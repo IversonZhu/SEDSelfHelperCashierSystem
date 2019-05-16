@@ -18,11 +18,15 @@ namespace SEDSelfHelpCashierSystem.Component
     /// <summary>
     /// AdministratorLoginBox.xaml 的交互逻辑
     /// </summary>
-    public partial class AdministratorLoginBox : Page
+    public partial class AdministratorLoginBox : Window
     {
         public AdministratorLoginBox()
         {
             InitializeComponent();
+        }
+        private void Close_BtnClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
