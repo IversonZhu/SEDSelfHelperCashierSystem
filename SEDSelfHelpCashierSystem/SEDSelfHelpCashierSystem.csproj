@@ -71,10 +71,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Component\JsonHelper.cs" />
-    <Compile Include="Component\LogHelper.cs" />
-    <Compile Include="Component\ViewHelper.cs" />
-    <Compile Include="Component\VoiceHelper.cs" />
+    <Compile Include="Utils\JsonHelper.cs" />
+    <Compile Include="Utils\LogHelper.cs" />
+    <Compile Include="Utils\ViewHelper.cs" />
+    <Compile Include="Utils\VoiceHelper.cs" />
     <Compile Include="Entity\Fuji\AuthorizationCertify.cs" />
     <Compile Include="Entity\Fuji\AuthorizationInfoRtn.cs" />
     <Compile Include="Entity\Fuji\CancelBarcodeCertify.cs" />
@@ -114,6 +114,9 @@
     <Compile Include="Utils\Converter.cs" />
     <Compile Include="Utils\Object2JsonUtil.cs" />
     <Compile Include="Utils\WebServiceUtil.cs" />
+    <Compile Include="Views\WelcomePage.xaml.cs">
+      <DependentUpon>WelcomePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Web References\WebReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -132,6 +135,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Styles\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WelcomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -171,11 +178,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Component\" />
     <Folder Include="Config\" />
     <Folder Include="Entity\Sed\" />
-    <Folder Include="Video\" />
-    <Folder Include="Views\" />
-    <Folder Include="Voice\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\bestpay_guide.png" />
@@ -187,46 +192,46 @@
     <Resource Include="Images\Btn-alipay 2-300x300.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\Btn-wechat 2-300x300.png" />
+    <Resource Include="Images\Btn-wechat 2-300x300.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\kbbg.png" />
+    <Resource Include="Images\kbbg.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\PayGuide.png" />
+    <Resource Include="Images\PayGuide.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\sedbz.ico" />
+    <Resource Include="Images\sedbz.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\success.png" />
+    <Resource Include="Images\success.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\储值卡.png" />
+    <Resource Include="Images\储值卡.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\桑达title.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\扫描商品贴图.png" />
+    <Resource Include="Images\扫描商品贴图.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\刷储值卡指引.png" />
+    <Resource Include="Images\刷储值卡指引.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\刷银行卡指引.png" />
+    <Resource Include="Images\刷银行卡指引.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\微信支付.png" />
+    <Resource Include="Images\微信支付.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\翼支付.png" />
+    <Resource Include="Images\翼支付.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\银行卡支付.png" />
+    <Resource Include="Images\银行卡支付.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Images\支付宝.png" />
+    <Resource Include="Images\支付宝.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Lib\CRT_310.dll" />
@@ -255,6 +260,84 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>SEDSelfHelpCashierSystem_WebReference_LogicExposeService</CachedSettingsPropName>
     </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Video\welcomeguide.wmv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\Bye.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\CardInvert.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\CZKPayFail.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\ElePay.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\GoodsNoCheck.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\GradePay.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\InputBankCardPassword.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\InputPassword.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\InserOrScanVIP.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\InsertBankCard.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\InsertBankCardAgain.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\InsertCZK.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\InsertVIPCard.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\PayFail.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\PleaseWait.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\PutGoods.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\repeatScan.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\scancode.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\ScanFirstGoods.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\ScanManageCard.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\ScanMemberCard.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\SelectPayMode.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\weightErr.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\weightNoscan.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Voice\Welcom.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

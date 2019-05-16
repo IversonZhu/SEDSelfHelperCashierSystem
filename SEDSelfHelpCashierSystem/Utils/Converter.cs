@@ -23,6 +23,7 @@ namespace SEDSelfHelpCashierSystem.Utils
             }
             catch(Exception e)
             {
+                Utils.LogHelper.log.Error(e.ToString());
                 return value.ToString();//数据异常
             }
             

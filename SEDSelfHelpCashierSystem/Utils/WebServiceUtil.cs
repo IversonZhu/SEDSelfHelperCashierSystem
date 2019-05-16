@@ -29,10 +29,10 @@ namespace SEDSelfHelpCashierSystem.Utils
             try
             {
                 string str = webService.callMethod(str_send);
-                temp = Component.JsonHelper.GetObject<T>(str.Split('$')[1]);
+                temp = Utils.JsonHelper.GetObject<T>(str.Split('$')[1]);
             } catch(Exception e)
             {
-                Component.LogHelper.log.Error(e.ToString());
+                Utils.LogHelper.log.Error(e.ToString());
             }
             
             return temp;

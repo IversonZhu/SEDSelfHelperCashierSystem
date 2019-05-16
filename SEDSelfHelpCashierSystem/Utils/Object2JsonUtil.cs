@@ -10,7 +10,7 @@ namespace SEDSelfHelpCashierSystem.Utils
     {
         public string GetInfo()
         {
-            return this.GetType().Name + '$' + Component.JsonHelper.GetJsonStr(this);
+            return this.GetType().Name + '$' + Utils.JsonHelper.GetJsonStr(this);
         }
     }
 }
