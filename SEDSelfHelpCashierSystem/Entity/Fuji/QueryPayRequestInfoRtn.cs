@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SEDSelfHelpCashierSystem.Entity.Fuji
 {
-    class QueryPayRequestInfoRtn : Utils.Object2JsonUtil
+    public class QueryPayRequestInfoRtn : Utils.Object2JsonUtil
     {
         public string retflag { get; set; }//返回标志
         public string retmsg { get; set; }//返回的信息

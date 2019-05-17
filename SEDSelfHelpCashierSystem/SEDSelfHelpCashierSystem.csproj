@@ -90,12 +90,22 @@
     <Compile Include="Component\WarningBox.xaml.cs">
       <DependentUpon>WarningBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Entity\Fuji\DailyInfo.cs" />
+    <Compile Include="Entity\Fuji\ResultCluster.cs" />
+    <Compile Include="Entity\Fuji\TicketInfo.cs" />
+    <Compile Include="Enum\LedColor.cs" />
+    <Compile Include="Enum\LedStatus.cs" />
     <Compile Include="Enum\PayStatu.cs" />
+    <Compile Include="Enum\PayWayVisibility.cs" />
     <Compile Include="Enum\VoiceType.cs" />
+    <Compile Include="Utils\ConfigHelper.cs" />
     <Compile Include="Utils\JsonHelper.cs" />
     <Compile Include="Utils\KeyBoardHook.cs" />
+    <Compile Include="Utils\LedControlUtil.cs" />
     <Compile Include="Utils\LogHelper.cs" />
+    <Compile Include="Utils\ReleaseSourceUtil.cs" />
     <Compile Include="Utils\SQLiteHelper.cs" />
+    <Compile Include="Utils\TicketHelper.cs" />
     <Compile Include="Utils\ViewHelper.cs" />
     <Compile Include="Utils\VoiceHelper.cs" />
     <Compile Include="Entity\Fuji\AuthorizationCertify.cs" />
@@ -105,7 +115,7 @@
     <Compile Include="Entity\Fuji\CancelPayCertify.cs" />
     <Compile Include="Entity\Fuji\CancelPayInfoRtn.cs" />
     <Compile Include="Entity\Fuji\CancelTradeCertify.cs" />
-    <Compile Include="Entity\Fuji\CancelTradeinfoRtn.cs" />
+    <Compile Include="Entity\Fuji\CancelTradeInfoRtn.cs" />
     <Compile Include="Entity\Fuji\CouponGain.cs" />
     <Compile Include="Entity\Fuji\FindGoodsCertify.cs" />
     <Compile Include="Entity\Fuji\FinishCertify.cs" />
@@ -208,8 +218,8 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Compile Include="Entity\Fuji\FinishInfoRtn.cs" />
-    <None Include="Config\Configuration.ini" />
-    <None Include="Config\log4net.config" />
+    <Content Include="Config\Configuration.ini" />
+    <Content Include="Config\log4net.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
